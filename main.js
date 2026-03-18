@@ -32,6 +32,13 @@ if (preloader && counter) {
     }, 50);
 }
 
+// --- GLOBAL MOUSE VARIABLES (Used by 3D Parallax & Cursor) ---
+let mouseX = window.innerWidth / 2, mouseY = window.innerHeight / 2;
+window.addEventListener('mousemove', (e) => {
+    mouseX = e.clientX;
+    mouseY = e.clientY;
+});
+
 const isTouchDevice = window.matchMedia("(hover: none) and (pointer: coarse)").matches;
 
 // --- CUSTOM CURSOR & MOUSE EFFECTS (DESKTOP ONLY) ---
@@ -44,14 +51,8 @@ if (!isTouchDevice) {
     cursorOutline.classList.add('cursor-outline');
     document.body.appendChild(cursorOutline);
 
-    let mouseX = window.innerWidth / 2, mouseY = window.innerHeight / 2;
     let dotX = mouseX, dotY = mouseY;
     let outlineX = mouseX, outlineY = mouseY;
-
-    window.addEventListener('mousemove', (e) => {
-        mouseX = e.clientX;
-        mouseY = e.clientY;
-    });
 
     function animateCursor() {
         dotX += (mouseX - dotX) * 0.2;
