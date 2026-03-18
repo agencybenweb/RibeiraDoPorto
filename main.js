@@ -32,73 +32,77 @@ if (preloader && counter) {
     }, 50);
 }
 
-// --- CUSTOM CURSOR ---
-const cursorDot = document.createElement('div');
-cursorDot.classList.add('cursor-dot');
-document.body.appendChild(cursorDot);
+const isTouchDevice = window.matchMedia("(hover: none) and (pointer: coarse)").matches;
 
-const cursorOutline = document.createElement('div');
-cursorOutline.classList.add('cursor-outline');
-document.body.appendChild(cursorOutline);
+// --- CUSTOM CURSOR & MOUSE EFFECTS (DESKTOP ONLY) ---
+if (!isTouchDevice) {
+    const cursorDot = document.createElement('div');
+    cursorDot.classList.add('cursor-dot');
+    document.body.appendChild(cursorDot);
 
-let mouseX = window.innerWidth / 2, mouseY = window.innerHeight / 2;
-let dotX = mouseX, dotY = mouseY;
-let outlineX = mouseX, outlineY = mouseY;
+    const cursorOutline = document.createElement('div');
+    cursorOutline.classList.add('cursor-outline');
+    document.body.appendChild(cursorOutline);
 
-window.addEventListener('mousemove', (e) => {
-    mouseX = e.clientX;
-    mouseY = e.clientY;
-});
+    let mouseX = window.innerWidth / 2, mouseY = window.innerHeight / 2;
+    let dotX = mouseX, dotY = mouseY;
+    let outlineX = mouseX, outlineY = mouseY;
 
-function animateCursor() {
-    dotX += (mouseX - dotX) * 0.2;
-    dotY += (mouseY - dotY) * 0.2;
-    outlineX += (mouseX - outlineX) * 0.15;
-    outlineY += (mouseY - outlineY) * 0.15;
-
-    cursorDot.style.transform = `translate(${dotX}px, ${dotY}px) translate(-50%, -50%)`;
-    cursorOutline.style.transform = `translate(${outlineX}px, ${outlineY}px) translate(-50%, -50%)`;
-
-    requestAnimationFrame(animateCursor);
-}
-animateCursor();
-
-// MAGNETIC BUTTONS
-document.querySelectorAll('.btn, .nav-links a').forEach(btn => {
-    btn.addEventListener('mousemove', e => {
-        const rect = btn.getBoundingClientRect();
-        const x = e.clientX - rect.left - rect.width / 2;
-        const y = e.clientY - rect.top - rect.height / 2;
-        gsap.to(btn, { x: x * 0.2, y: y * 0.2, duration: 0.3 });
-    });
-    btn.addEventListener('mouseleave', () => {
-        gsap.to(btn, { x: 0, y: 0, duration: 0.3 });
-    });
-});
-
-document.querySelectorAll('a, button, input, select, textarea').forEach(el => {
-    el.addEventListener('mouseenter', () => document.body.classList.add('cursor-hover'));
-    el.addEventListener('mouseleave', () => document.body.classList.remove('cursor-hover'));
-});
-
-// --- MENU HOVER REVEAL ---
-const hoverImg = document.querySelector('.hover-reveal-img');
-if (hoverImg) {
-    document.addEventListener('mousemove', (e) => {
-        hoverImg.style.left = e.clientX + 'px';
-        hoverImg.style.top = e.clientY + 'px';
+    window.addEventListener('mousemove', (e) => {
+        mouseX = e.clientX;
+        mouseY = e.clientY;
     });
 
-    document.querySelectorAll('.menu-item[data-image]').forEach(item => {
-        item.addEventListener('mouseenter', (e) => {
-            const imgSrc = item.getAttribute('data-image');
-            hoverImg.style.backgroundImage = `url(${imgSrc})`;
-            hoverImg.classList.add('visible');
+    function animateCursor() {
+        dotX += (mouseX - dotX) * 0.2;
+        dotY += (mouseY - dotY) * 0.2;
+        outlineX += (mouseX - outlineX) * 0.15;
+        outlineY += (mouseY - outlineY) * 0.15;
+
+        cursorDot.style.transform = `translate(${dotX}px, ${dotY}px) translate(-50%, -50%)`;
+        cursorOutline.style.transform = `translate(${outlineX}px, ${outlineY}px) translate(-50%, -50%)`;
+
+        requestAnimationFrame(animateCursor);
+    }
+    animateCursor();
+
+    // MAGNETIC BUTTONS
+    document.querySelectorAll('.btn, .nav-links a').forEach(btn => {
+        btn.addEventListener('mousemove', e => {
+            const rect = btn.getBoundingClientRect();
+            const x = e.clientX - rect.left - rect.width / 2;
+            const y = e.clientY - rect.top - rect.height / 2;
+            gsap.to(btn, { x: x * 0.2, y: y * 0.2, duration: 0.3 });
         });
-        item.addEventListener('mouseleave', () => {
-            hoverImg.classList.remove('visible');
+        btn.addEventListener('mouseleave', () => {
+            gsap.to(btn, { x: 0, y: 0, duration: 0.3 });
         });
     });
+
+    document.querySelectorAll('a, button, input, select, textarea, .menu-item').forEach(el => {
+        el.addEventListener('mouseenter', () => document.body.classList.add('cursor-hover'));
+        el.addEventListener('mouseleave', () => document.body.classList.remove('cursor-hover'));
+    });
+
+    // --- MENU HOVER REVEAL ---
+    const hoverImg = document.querySelector('.hover-reveal-img');
+    if (hoverImg) {
+        document.addEventListener('mousemove', (e) => {
+            hoverImg.style.left = e.clientX + 'px';
+            hoverImg.style.top = e.clientY + 'px';
+        });
+
+        document.querySelectorAll('.menu-item[data-image]').forEach(item => {
+            item.addEventListener('mouseenter', (e) => {
+                const imgSrc = item.getAttribute('data-image');
+                hoverImg.style.backgroundImage = `url(${imgSrc})`;
+                hoverImg.classList.add('visible');
+            });
+            item.addEventListener('mouseleave', () => {
+                hoverImg.classList.remove('visible');
+            });
+        });
+    }
 }
 
 // --- MOBILE MENU ---
