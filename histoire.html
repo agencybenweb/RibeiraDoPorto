@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notre Histoire | Ribeira do Porto</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="https://unpkg.com/@studio-freight/lenis@1.0.34/dist/lenis.min.js"></script>
+</head>
+<body>
+    <div class="page-transition"><h2>L'HISTOIRE</h2></div>
+    <div id="canvas-container"></div>
+    <div class="hover-reveal-img"></div>
+    
+    <nav class="navbar">
+        <a href="index.html" class="logo">Ribeira do Porto</a>
+        <div class="menu-toggle"><span></span><span></span></div>
+        <div class="nav-links">
+            <a href="index.html">Accueil</a>
+            <a href="menu.html">La Carte</a>
+            <a href="histoire.html" class="active">L'Histoire</a>
+            <a href="galerie.html">Galerie</a>
+            <a href="reservation.html">Réservation</a>
+        </div>
+    </nav>
+    <div class="mobile-nav">
+        <a href="index.html">Accueil</a>
+        <a href="menu.html">La Carte</a>
+        <a href="histoire.html">L'Histoire</a>
+        <a href="galerie.html">Galerie</a>
+        <a href="reservation.html">Réservation</a>
+    </div>
+
+    <main>
+        <section class="hero" style="min-height: 70vh;">
+            <div class="title-wrapper reveal-text">
+                <span class="subtitle">Origines</span>
+                <h2>De Porto à Roanne</h2>
+            </div>
+        </section>
+
+        <!-- Story Content -->
+        <section style="padding-top: 0; max-width: 900px; margin: 0 auto; width: 100%;">
+            
+            <div class="reveal-text" style="margin-bottom: 5rem;">
+                <h3 style="font-size: 2.5rem; color: var(--gold); margin-bottom: 2rem; font-family: var(--font-heading);">Une Passion Héritée</h3>
+                <p style="font-size: 1.2rem; line-height: 1.8; color: var(--text-muted); font-weight: 300;">
+                    Le Ribeira do Porto n'est pas qu'un simple restaurant. C'est l'aboutissement d'un rêve : celui d'apporter l'effervescence, la chaleur et surtout, le goût authentique des rives du fleuve Douro, directement au cœur de Roanne. 
+                </p>
+                <br>
+                <p style="font-size: 1.2rem; line-height: 1.8; color: var(--text-muted); font-weight: 300;">
+                    L'âme de notre établissement réside dans son ambiance familiale. En franchissant nos portes au 30 Rue Benoît Malon, vous n'entrez pas seulement dans un lieu de restauration, vous êtes accueillis chez nous, comme au pays. 
+                </p>
+            </div>
+
+            <div class="reveal-text" style="margin-bottom: 5rem;">
+                <h3 style="font-size: 2.5rem; color: var(--gold); margin-bottom: 2rem; font-family: var(--font-heading);">L'Art du Produit Brut</h3>
+                <p style="font-size: 1.2rem; line-height: 1.8; color: var(--text-muted); font-weight: 300;">
+                    Dans notre cuisine, il n'y a pas de raccourcis. Notre philosophie s'articule autour de deux mots : <strong>Frais et Instantané</strong>. Tous nos plats, de notre renommée <em>Francesinha</em> à nos déclinaisons de morue (Bacalhau), sont patiemment cuisinés à la commande.
+                </p>
+                <br>
+                <p style="font-size: 1.2rem; line-height: 1.8; color: var(--text-muted); font-weight: 300;">
+                    Le chef met un point d'honneur à sélectionner des viandes de première qualité et des fruits de mer irréprochables pour vous garantir des saveurs franches, grillées et assaisonnées selon le savoir-faire ancestral portugais.
+                </p>
+            </div>
+
+            <div class="text-center reveal-text" style="margin-top: 8rem; padding: 4rem; border: 1px solid rgba(212, 168, 67, 0.2);">
+                <p style="font-family: var(--font-heading); font-size: 2rem; color: var(--gold); font-style: italic;">"Bem-vindo. Prenez place et laissez-vous porter."</p>
+            </div>
+
+        </section>
+    </main>
+
+    <footer style="margin-top: 5rem;">
+        <div class="footer-grid">
+            <div class="footer-col">
+                <div class="logo" style="font-size: 1.5rem; margin-bottom: 1rem;">R.D.P</div>
+                <p>Restaurant de spécialités portugaises et méditerranéennes.<br>Sur place, à emporter ou en drive.</p>
+            </div>
+            <div class="footer-col">
+                <h4>Contact</h4>
+                <a href="https://maps.google.com/?q=30+Rue+Benoît+Malon,+42300+Roanne" target="_blank" rel="noopener noreferrer">📍 30 Rue Benoît Malon, 42300 Roanne</a>
+                <a href="tel:+33463654229">📞 04 63 65 42 29</a>
+                <a href="tel:+33611376496">📱 06 11 37 64 96</a>
+                <a href="mailto:contact@ribeiradoporto.fr">✉️ contact@ribeiradoporto.fr</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Ribeira do Porto Roanne. Tous droits réservés.</p>
+        </div>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="main.js"></script>
+</body>
+</html>

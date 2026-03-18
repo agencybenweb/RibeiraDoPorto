@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>La Carte | Ribeira do Porto</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="https://unpkg.com/@studio-freight/lenis@1.0.34/dist/lenis.min.js"></script>
+</head>
+<body>
+    <div class="page-transition"><h2>LA CARTE</h2></div>
+    <div id="canvas-container"></div>
+    <div class="hover-reveal-img"></div>
+    
+    <nav class="navbar">
+        <a href="index.html" class="logo">Ribeira do Porto</a>
+        <div class="menu-toggle"><span></span><span></span></div>
+        <div class="nav-links">
+            <a href="index.html">Accueil</a>
+            <a href="menu.html" class="active">La Carte</a>
+            <a href="histoire.html">L'Histoire</a>
+            <a href="galerie.html">Galerie</a>
+            <a href="reservation.html">Réservation</a>
+        </div>
+    </nav>
+    <div class="mobile-nav">
+        <a href="index.html">Accueil</a>
+        <a href="menu.html">La Carte</a>
+        <a href="histoire.html">L'Histoire</a>
+        <a href="galerie.html">Galerie</a>
+        <a href="reservation.html">Réservation</a>
+    </div>
+
+    <main>
+        <section class="hero" style="min-height: 60vh;">
+            <div class="title-wrapper reveal-text" style="margin-bottom: 0;">
+                <span class="subtitle">Gastronomie</span>
+                <h2>Notre Carte</h2>
+                <p style="color: var(--text-muted); margin-top: 1rem;">Tout est cuisiné minute avec des produits frais.</p>
+            </div>
+        </section>
+
+        <!-- Menu Content -->
+        <section style="padding-top: 0; max-width: 1000px; margin: 0 auto; width: 100%;">
+            
+            <!-- Petiscos & Entrées -->
+            <div class="menu-category reveal-text">
+                <h3 class="menu-category-title">Petiscos & Entrées</h3>
+                
+                <div class="menu-item">
+                    <div class="menu-item-info">
+                        <h4>Accras de Morue (Pastéis de Bacalhau)</h4>
+                        <p>Beignets traditionnels de morue et pommes de terre. (6 pièces)</p>
+                    </div>
+                    <div class="menu-item-price">8,50 €</div>
+                </div>
+                
+                <div class="menu-item" data-image="https://images.unsplash.com/photo-1544025162-8e1041dd4b27?q=80&w=1000&auto=format&fit=crop">
+                    <div class="menu-item-info">
+                        <h4>Chouriço Assado</h4>
+                        <p>Chorizo portugais flambé à l'eau-de-vie directement à votre table.</p>
+                    </div>
+                    <div class="menu-item-price">12,00 €</div>
+                </div>
+            </div>
+
+            <!-- Plats Signature -->
+            <div class="menu-category reveal-text">
+                <h3 class="menu-category-title">Plats Signature</h3>
+                
+                <div class="menu-item" data-image="https://images.unsplash.com/photo-1550547660-d9450f859349?q=80&w=1000&auto=format&fit=crop">
+                    <div class="menu-item-info">
+                        <h4>La Francesinha du Chef</h4>
+                        <p>Pain de mie, steak, saucisses, linguiça, jambon, fromage fondu, œuf à cheval, sauce fameuse à la bière et porto.</p>
+                    </div>
+                    <div class="menu-item-price">22,50 €</div>
+                </div>
+                
+                <div class="menu-item" data-image="https://images.unsplash.com/photo-1534080564583-6be75777b70a?q=80&w=1000&auto=format&fit=crop">
+                    <div class="menu-item-info">
+                        <h4>Bacalhau à Brás</h4>
+                        <p>Morue effilochée, oignons fondants, pommes pailles, œufs brouillés minute, olives noires et persil frais.</p>
+                    </div>
+                    <div class="menu-item-price">24,00 €</div>
+                </div>
+
+                <div class="menu-item" data-image="https://images.unsplash.com/photo-1615141982883-c7ad0e69fd62?q=80&w=1000&auto=format&fit=crop">
+                    <div class="menu-item-info">
+                        <h4>Bacalhau à Lagareiro</h4>
+                        <p>Tronçon de morue rôti au four, huile d'olive vierge, ail croquant, pommes de terre grenailles tapées.</p>
+                    </div>
+                    <div class="menu-item-price">26,50 €</div>
+                </div>
+            </div>
+
+            <!-- Viandes -->
+            <div class="menu-category reveal-text">
+                <h3 class="menu-category-title">Viandes (Carnes)</h3>
+                
+                <div class="menu-item" data-image="https://images.unsplash.com/photo-1600891964092-4316c288032e?q=80&w=1000&auto=format&fit=crop">
+                    <div class="menu-item-info">
+                        <h4>Picanha Grillée</h4>
+                        <p>Pièce de bœuf savoureuse tranchée finement, frites, riz, haricots noirs, farofa.</p>
+                    </div>
+                    <div class="menu-item-price">25,00 €</div>
+                </div>
+            </div>
+
+            <!-- Desserts -->
+            <div class="menu-category reveal-text">
+                <h3 class="menu-category-title">Desserts</h3>
+                
+                <div class="menu-item" data-image="https://images.unsplash.com/photo-1574936145840-28808d77a0b6?q=80&w=1000&auto=format&fit=crop">
+                    <div class="menu-item-info">
+                        <h4>Tiramisu Maison</h4>
+                        <p>Recette secrète du chef, onctueux et aérien.</p>
+                    </div>
+                    <div class="menu-item-price">7,50 €</div>
+                </div>
+            </div>
+
+        </section>
+    </main>
+
+    <footer style="margin-top: 5rem;">
+        <div class="footer-grid">
+            <div class="footer-col">
+                <div class="logo" style="font-size: 1.5rem; margin-bottom: 1rem;">R.D.P</div>
+                <p>Restaurant de spécialités portugaises et méditerranéennes.<br>Sur place, à emporter ou en drive.</p>
+            </div>
+            <div class="footer-col">
+                <h4>Contact</h4>
+                <a href="https://maps.google.com/?q=30+Rue+Benoît+Malon,+42300+Roanne" target="_blank" rel="noopener noreferrer">📍 30 Rue Benoît Malon, 42300 Roanne</a>
+                <a href="tel:+33463654229">📞 04 63 65 42 29</a>
+                <a href="tel:+33611376496">📱 06 11 37 64 96</a>
+                <a href="mailto:contact@ribeiradoporto.fr">✉️ contact@ribeiradoporto.fr</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Ribeira do Porto Roanne. Tous droits réservés.</p>
+        </div>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="main.js"></script>
+</body>
+</html>

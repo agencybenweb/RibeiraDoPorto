@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Réserver | Ribeira do Porto</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="https://unpkg.com/@studio-freight/lenis@1.0.34/dist/lenis.min.js"></script>
+</head>
+<body>
+    <div class="page-transition"><h2>RÉSERVATION</h2></div>
+    <div id="canvas-container"></div>
+    <div class="hover-reveal-img"></div>
+    
+    <nav class="navbar">
+        <a href="index.html" class="logo">Ribeira do Porto</a>
+        <div class="menu-toggle"><span></span><span></span></div>
+        <div class="nav-links">
+            <a href="index.html">Accueil</a>
+            <a href="menu.html">La Carte</a>
+            <a href="histoire.html">L'Histoire</a>
+            <a href="galerie.html">Galerie</a>
+            <a href="reservation.html" class="active">Réservation</a>
+        </div>
+    </nav>
+    <div class="mobile-nav">
+        <a href="index.html">Accueil</a>
+        <a href="menu.html">La Carte</a>
+        <a href="histoire.html">L'Histoire</a>
+        <a href="galerie.html">Galerie</a>
+        <a href="reservation.html">Réservation</a>
+    </div>
+
+    <main>
+        <section class="hero" style="min-height: 40vh; align-items: flex-start; text-align: left;">
+            <!-- Padding -->
+        </section>
+
+        <!-- Booking Form Section -->
+        <section style="padding-top: 0;">
+            <div class="title-wrapper reveal-text" style="margin-bottom: 3rem;">
+                <span class="subtitle">Votre Table</span>
+                <h2>S'inviter au Portugal</h2>
+            </div>
+            
+            <div class="form-container reveal-text">
+                <form action="#" method="POST" onsubmit="event.preventDefault(); alert('Votre demande de réservation a bien été envoyée ! Nous vous confirmerons rapidement par téléphone.');">
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem;">
+                        <div class="form-group">
+                            <input type="text" id="name" required>
+                            <label for="name">Nom complet</label>
+                        </div>
+                        <div class="form-group">
+                            <input type="tel" id="phone" required>
+                            <label for="phone">Numéro de téléphone</label>
+                        </div>
+                    </div>
+                    
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem;">
+                        <div class="form-group">
+                            <input type="date" id="date" required style="cursor: pointer;">
+                            <label for="date" style="top: -1.5rem; font-size: 0.85rem; color: var(--gold);">Date souhaitée</label>
+                        </div>
+                        <div class="form-group">
+                            <input type="time" id="time" required style="cursor: pointer;">
+                            <label for="time" style="top: -1.5rem; font-size: 0.85rem; color: var(--gold);">Heure</label>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <select id="guests" required>
+                            <option value="1">1 Personne</option>
+                            <option value="2" selected>2 Personnes</option>
+                            <option value="3">3 Personnes</option>
+                            <option value="4">4 Personnes</option>
+                            <option value="5">5 Personnes</option>
+                            <option value="6+">6 Personnes ou plus (Privatisation possible)</option>
+                        </select>
+                        <label for="guests" style="top: -1.5rem; font-size: 0.85rem; color: var(--gold);">Nombre de convives</label>
+                    </div>
+
+                    <div class="form-group" style="margin-bottom: 3rem;">
+                        <textarea id="message" rows="3" required></textarea>
+                        <label for="message">Une demande particulière ? (Allergies, anniversaire...)</label>
+                    </div>
+
+                    <div style="text-align: center;">
+                        <button type="submit" class="btn btn-solid" style="width: 100%; border: none;">Confirmer la demande</button>
+                    </div>
+                </form>
+                <div class="text-center" style="margin-top: 2rem; color: var(--text-muted); font-size: 0.9rem;">
+                    Ou appelez-nous directement au <br>
+                    <a href="tel:+33463654229" style="text-decoration:none;"><strong style="color: var(--gold);">04 63 65 42 29</strong></a> ou <a href="tel:+33611376496" style="text-decoration:none;"><strong style="color: var(--gold);">06 11 37 64 96</strong></a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer style="margin-top: 2rem;">
+        <div class="footer-grid">
+            <div class="footer-col">
+                <div class="logo" style="font-size: 1.5rem; margin-bottom: 1rem;">R.D.P</div>
+                <p>Restaurant de spécialités portugaises et méditerranéennes.<br>Sur place, à emporter ou en drive.</p>
+            </div>
+            <div class="footer-col">
+                <h4>Contact</h4>
+                <a href="https://maps.google.com/?q=30+Rue+Benoît+Malon,+42300+Roanne" target="_blank" rel="noopener noreferrer">📍 30 Rue Benoît Malon, 42300 Roanne</a>
+                <a href="tel:+33463654229">📞 04 63 65 42 29</a>
+                <a href="tel:+33611376496">📱 06 11 37 64 96</a>
+                <a href="mailto:contact@ribeiradoporto.fr">✉️ contact@ribeiradoporto.fr</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Ribeira do Porto Roanne. Tous droits réservés.</p>
+        </div>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="main.js"></script>
+</body>
+</html>
